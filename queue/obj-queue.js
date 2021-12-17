@@ -1,4 +1,4 @@
-class Queue {
+export class Queue {
     constructor() {
         /**
          * @private
@@ -27,7 +27,6 @@ class Queue {
        if(this.isEmpty()) {
            return undefined
        }
-       --this.count
 
        const res = this.items[this.lowestCount]
        delete this.items[this.lowestCount++]

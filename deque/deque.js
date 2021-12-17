@@ -44,7 +44,6 @@ class Deque {
        if(this.isEmpty()) {
            return undefined
        }
-       --this.count
 
        const res = this.items[this.lowestCount]
        delete this.items[this.lowestCount++]
