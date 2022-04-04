@@ -18,22 +18,22 @@ export default class LinkedList {
     }
 
     /**
-     * 
-     * @param {unknown} e 
+     *
+     * @param {unknown} e
      */
     push(e) {
-        const node = new Node(e); 
-        let current; 
-        if (this.head == null) { 
+        const node = new Node(e);
+        let current;
+        if (this.head == null) {
             this.head = node;
         } else {
             current = this.head;
-            while (current.next != null) { 
+            while (current.next != null) {
                 current = current.next;
             }
-            current.next = node; 
+            current.next = node;
         }
-        this.count++; 
+        this.count++;
     }
 
     /**
@@ -41,9 +41,9 @@ export default class LinkedList {
      * @param {number} index
      */
     insert(e, index){
-        if (index >= 0 && index <= this.count) { 
+        if (index >= 0 && index <= this.count) {
             const node = new Node(e)
-        if (index === 0) { 
+        if (index === 0) {
             const current = this.head
             node.next = current
             this.head = node
@@ -63,11 +63,11 @@ export default class LinkedList {
      * @param {number} index
      */
     getElementAt(index) {
-        if (index >= 0 && index < this.count) { 
-            let current = this.head 
-        if (index === 0) { 
+        if (index >= 0 && index < this.count) {
+            let current = this.head
+        if (index === 0) {
             return current
-        } else { 
+        } else {
             for (let i = 0; i < index; i++) {
                 current = current.next
                 }
@@ -93,7 +93,7 @@ export default class LinkedList {
         if(current.element == e) {
             return 0
         }
-        let i = 0 
+        let i = 0
         while (current.next != null) {
             ++i
             current = current.next
@@ -108,9 +108,9 @@ export default class LinkedList {
      * @param {number} index
      */
     removeAt(index) {
-    if (index >= 0 && index < this.count) { 
-        let current = this.head 
-    if (index === 0) { 
+    if (index >= 0 && index < this.count) {
+        let current = this.head
+    if (index === 0) {
         this.head = current.next
     } else {
         const previous = this.getElementAt(index - 1)
@@ -139,8 +139,8 @@ export default class LinkedList {
     toString(separator = ',') {
         if(this.isEmpty()) {
             return ''
-        } 
-        
+        }
+
         let current = this.head
         let objString = `${this.head.element}`
 
